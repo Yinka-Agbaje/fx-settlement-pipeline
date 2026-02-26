@@ -55,13 +55,3 @@ Create a .env file in the root directory and add your free ExchangeRate-API key:
 
 4. Execute the pipeline
    python loader.py
-
-   
-📊 Daily Reconciliation Report
-When queried via SQL, the pipeline generates the following executive output:
-
-Merchant_ID,Transaction_Amount (USD),Live_NGN_Rate,Settlement_Amount_NGN,Gateway_Revenue_NGN
-M_004,5000.00,1355.96,"6,678,127.00","101,697.36"
-M_002,1250.50,1355.96,"1,670,200.00","25,434.51"
-M_001,450.00,1355.96,"601,031.40","9,152.76"
-M_003,89.99,1355.96,"120,192.90","1,830.34"
