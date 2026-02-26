@@ -31,3 +31,10 @@ jobs:
       - name: Verify Warehouse Data
         run: |
           python query.py
+
+      - name: Upload Database Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-settlement-ledger
+          path: settlement_warehouse.db
+          retention-days: 7
