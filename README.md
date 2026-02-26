@@ -34,3 +34,34 @@ fx-settlement-pipeline/
 ├── query.py                # SQL validation script
 ├── settlement_warehouse.db # (Gitignored) Local database
 └── README.md               # Project documentation
+
+
+## 🚀 How to Run Locally
+
+**1. Clone the repository**
+```bash
+git clone [https://github.com/Yinka-Agbaje/fx-settlement-pipeline.git](https://github.com/Yinka-Agbaje/fx-settlement-pipeline.git)
+cd fx-settlement-pipeline
+
+2. Set up the virtual environment
+
+python -m venv venv
+venv\Scripts\activate
+pip install requests pandas sqlalchemy python-dotenv
+
+3. Configure credentials
+Create a .env file in the root directory and add your free ExchangeRate-API key:
+  EXCHANGE_RATE_API_KEY=your_api_key_here
+
+4. Execute the pipeline
+   python loader.py
+
+   
+📊 Daily Reconciliation Report
+When queried via SQL, the pipeline generates the following executive output:
+
+Merchant_ID,Transaction_Amount (USD),Live_NGN_Rate,Settlement_Amount_NGN,Gateway_Revenue_NGN
+M_004,5000.00,1355.96,"6,678,127.00","101,697.36"
+M_002,1250.50,1355.96,"1,670,200.00","25,434.51"
+M_001,450.00,1355.96,"601,031.40","9,152.76"
+M_003,89.99,1355.96,"120,192.90","1,830.34"
